@@ -128,17 +128,24 @@ const styles = {
     animation: `spin-slow ${8 + delay * 2}s linear infinite`,
   }),
   centerDot: {
-    width: '80px',
-    height: '80px',
+    width: '140px',
+    height: '140px',
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #ff8000, #ffaa44)',
+    background: 'radial-gradient(circle at 50% 40%, rgba(255,128,0,0.18), rgba(13,13,13,0.6))',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    boxShadow: '0 0 40px rgba(255, 128, 0, 0.5), 0 0 80px rgba(255, 128, 0, 0.2)',
+    boxShadow: '0 0 50px rgba(255, 128, 0, 0.5), 0 0 90px rgba(255, 128, 0, 0.2)',
     animation: 'pulse-glow 3s infinite',
     zIndex: 2,
-    border: '2px solid rgba(255, 200, 136, 0.3)',
+    border: '2px solid rgba(255, 200, 136, 0.35)',
+    backdropFilter: 'blur(4px)',
+  },
+  centerLogo: {
+    width: '110px',
+    height: '110px',
+    objectFit: 'contain',
+    filter: 'drop-shadow(0 0 14px rgba(255, 128, 0, 0.7))',
   },
   features: {
     maxWidth: '1200px',
@@ -180,6 +187,36 @@ const styles = {
     fontSize: '13px',
     color: '#b3b3b3',
     lineHeight: 1.5,
+  },
+  footer: {
+    maxWidth: '1200px',
+    margin: '80px auto 40px',
+    paddingTop: '32px',
+    borderTop: '1px solid rgba(255, 128, 0, 0.12)',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '14px',
+    textAlign: 'center',
+  },
+  footerLabel: {
+    fontSize: '10px',
+    color: '#8a8a8a',
+    textTransform: 'uppercase',
+    letterSpacing: '3px',
+    fontFamily: "'Fira Code', monospace",
+  },
+  footerLogo: {
+    height: '70px',
+    width: 'auto',
+    objectFit: 'contain',
+    filter: 'drop-shadow(0 0 16px rgba(255, 128, 0, 0.35))',
+    opacity: 0.95,
+  },
+  footerCopy: {
+    fontSize: '11px',
+    color: '#666',
+    fontFamily: "'Inter', sans-serif",
   },
 };
 
@@ -256,7 +293,7 @@ function Home() {
               <div key={i} style={styles.circle(size, i)} />
             ))}
             <div style={styles.centerDot}>
-              <Radio size={32} color="#fff" />
+              <img src="/logo-radio-hd.png" alt="Eternal Beat Radio" style={styles.centerLogo} />
             </div>
           </div>
         </div>
@@ -273,6 +310,12 @@ function Home() {
           </Link>
         ))}
       </div>
+
+      <footer style={styles.footer}>
+        <span style={styles.footerLabel}>Un proyecto de</span>
+        <img src="/logo-medios-hd.png" alt="Eternal Beat Medios" style={styles.footerLogo} />
+        <span style={styles.footerCopy}>&copy; {new Date().getFullYear()} Eternal Beat Medios — Santiago, Chile</span>
+      </footer>
     </div>
   );
 }

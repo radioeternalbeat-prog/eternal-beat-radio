@@ -31,11 +31,23 @@ const styles = {
   },
   logo: {
     display: 'flex',
+    alignItems: 'center',
+    gap: '10px',
+  },
+  logoImg: {
+    height: '42px',
+    width: 'auto',
+    objectFit: 'contain',
+    filter: 'drop-shadow(0 0 10px rgba(255, 128, 0, 0.55))',
+    transition: 'filter 0.3s ease, transform 0.3s ease',
+  },
+  logoTextWrap: {
+    display: 'flex',
     flexDirection: 'column',
     gap: '0px',
   },
   logoTitle: {
-    fontSize: '20px',
+    fontSize: '18px',
     fontWeight: 800,
     fontFamily: "'Syne', sans-serif",
     background: 'linear-gradient(135deg, #ff8000 0%, #ffaa44 60%, #ffcc88 100%)',
@@ -129,8 +141,15 @@ function Navbar() {
       <nav style={styles.nav}>
         <Link to="/" style={{ textDecoration: 'none' }}>
           <div style={styles.logo}>
-            <span style={styles.logoTitle}>Eternal Beat</span>
-            <span style={styles.logoSubtitle}>Radio Chile</span>
+            <img
+              src="/logo-radio-hd.png"
+              alt="Eternal Beat Radio"
+              style={styles.logoImg}
+            />
+            <div style={styles.logoTextWrap}>
+              <span style={styles.logoTitle}>Eternal Beat</span>
+              <span style={styles.logoSubtitle}>Radio Chile</span>
+            </div>
           </div>
         </Link>
 

@@ -7,13 +7,13 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg'],
+      includeAssets: ['favicon.svg', 'apple-touch-icon.png', 'logo-radio-hd.png', 'logo-medios-hd.png'],
       manifest: {
         name: 'Eternal Beat Radio Chile',
         short_name: 'EB Radio',
         description: 'Progressive House & Melodic Techno 24/7',
-        theme_color: '#0a0a0f',
-        background_color: '#0a0a0f',
+        theme_color: '#ff8000',
+        background_color: '#0d0d0d',
         display: 'standalone',
         icons: [
           {
@@ -25,6 +25,12 @@ export default defineConfig({
             src: 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png'
+          },
+          {
+            src: 'maskable-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable'
           }
         ]
       }
