@@ -13,10 +13,11 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: '0 24px',
-    background: 'rgba(10, 10, 15, 0.95)',
-    backdropFilter: 'blur(20px)',
-    WebkitBackdropFilter: 'blur(20px)',
-    borderTop: '1px solid rgba(168, 85, 247, 0.15)',
+    background: 'rgba(13, 13, 13, 0.92)',
+    backdropFilter: 'blur(24px)',
+    WebkitBackdropFilter: 'blur(24px)',
+    borderTop: '1px solid rgba(255, 128, 0, 0.12)',
+    boxShadow: '0 -4px 30px rgba(0, 0, 0, 0.4), 0 -1px 0 rgba(255, 128, 0, 0.08)',
     zIndex: 1000,
     gap: '20px',
   },
@@ -30,12 +31,14 @@ const styles = {
   artwork: {
     width: '50px',
     height: '50px',
-    borderRadius: '10px',
-    background: 'linear-gradient(135deg, #a855f7, #06b6d4)',
+    borderRadius: '12px',
+    background: 'linear-gradient(135deg, #ff8000, #ffaa44)',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     flexShrink: 0,
+    boxShadow: '0 0 20px rgba(255, 128, 0, 0.3)',
+    border: '1px solid rgba(255, 128, 0, 0.3)',
   },
   trackText: {
     display: 'flex',
@@ -52,7 +55,7 @@ const styles = {
   },
   trackArtist: {
     fontSize: '12px',
-    color: '#a1a1aa',
+    color: '#b3b3b3',
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
@@ -65,7 +68,7 @@ const styles = {
   skipBtn: {
     background: 'transparent',
     border: 'none',
-    color: '#a1a1aa',
+    color: '#b3b3b3',
     padding: '8px',
     borderRadius: '50%',
     display: 'flex',
@@ -82,13 +85,13 @@ const styles = {
     width: '48px',
     height: '48px',
     borderRadius: '50%',
-    background: 'linear-gradient(135deg, #a855f7, #06b6d4)',
+    background: 'linear-gradient(135deg, #ff8000, #ffaa44)',
     border: 'none',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     cursor: 'pointer',
-    boxShadow: '0 0 20px rgba(168, 85, 247, 0.4)',
+    boxShadow: '0 0 25px rgba(255, 128, 0, 0.5), 0 0 50px rgba(255, 128, 0, 0.2)',
     transition: 'all 0.3s ease',
   },
   rightSection: {
@@ -109,11 +112,12 @@ const styles = {
     width: '80px',
     height: '4px',
     borderRadius: '2px',
-    background: '#1a1a2e',
+    background: '#2a2a2a',
     outline: 'none',
     cursor: 'pointer',
     border: 'none',
     padding: 0,
+    accentColor: '#ff8000',
   },
   liveBadge: {
     display: 'flex',
@@ -121,19 +125,21 @@ const styles = {
     gap: '6px',
     padding: '4px 10px',
     borderRadius: '20px',
-    background: 'rgba(239, 68, 68, 0.2)',
-    border: '1px solid rgba(239, 68, 68, 0.4)',
+    background: 'rgba(255, 128, 0, 0.12)',
+    border: '1px solid rgba(255, 128, 0, 0.35)',
     fontSize: '11px',
     fontWeight: 600,
-    color: '#ef4444',
+    color: '#ff8000',
     textTransform: 'uppercase',
     letterSpacing: '1px',
+    boxShadow: '0 0 15px rgba(255, 128, 0, 0.15)',
   },
   liveDot: {
     width: '6px',
     height: '6px',
     borderRadius: '50%',
-    background: '#ef4444',
+    background: '#ff8000',
+    boxShadow: '0 0 8px rgba(255, 128, 0, 0.8)',
     animation: 'pulse-glow 1.5s infinite',
   },
   equalizer: {
@@ -144,13 +150,13 @@ const styles = {
   },
   eqBar: {
     width: '3px',
-    background: 'linear-gradient(to top, #a855f7, #06b6d4)',
+    background: 'linear-gradient(to top, #ff8000, #ffcc88)',
     borderRadius: '2px',
     animation: 'equalizer 0.8s ease-in-out infinite',
   },
   noTrack: {
     fontSize: '13px',
-    color: '#a1a1aa',
+    color: '#666666',
     fontStyle: 'italic',
   },
 };
@@ -218,7 +224,7 @@ function Player() {
           </div>
         )}
         <div style={styles.volumeContainer}>
-          <Volume2 size={16} color="#a1a1aa" />
+          <Volume2 size={16} color="#b3b3b3" />
           <input
             type="range"
             min="0"
