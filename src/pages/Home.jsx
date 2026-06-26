@@ -23,7 +23,8 @@ const styles = {
   },
   heroTitle: {
     fontSize: 'clamp(36px, 5vw, 56px)',
-    fontWeight: 700,
+    fontWeight: 800,
+    fontFamily: "'Syne', sans-serif",
     lineHeight: 1.1,
     marginBottom: '16px',
     background: 'linear-gradient(135deg, #ff8000 0%, #ffaa44 50%, #ffcc88 100%)',
@@ -31,6 +32,8 @@ const styles = {
     WebkitTextFillColor: 'transparent',
     backgroundClip: 'text',
     filter: 'drop-shadow(0 0 30px rgba(255, 128, 0, 0.3))',
+    letterSpacing: '-1px',
+    textTransform: 'uppercase',
   },
   heroSubtitle: {
     fontSize: '18px',
@@ -52,14 +55,16 @@ const styles = {
   statValue: {
     fontSize: '24px',
     fontWeight: 700,
+    fontFamily: "'Syne', sans-serif",
     color: '#ff8000',
     textShadow: '0 0 15px rgba(255, 128, 0, 0.4)',
   },
   statLabel: {
-    fontSize: '12px',
+    fontSize: '11px',
     color: '#b3b3b3',
     textTransform: 'uppercase',
-    letterSpacing: '1px',
+    letterSpacing: '2px',
+    fontFamily: "'Fira Code', monospace",
   },
   ctas: {
     display: 'flex',
@@ -165,9 +170,11 @@ const styles = {
   },
   featureTitle: {
     fontSize: '16px',
-    fontWeight: 600,
+    fontWeight: 700,
+    fontFamily: "'Syne', sans-serif",
     color: '#ffffff',
     marginBottom: '8px',
+    letterSpacing: '-0.3px',
   },
   featureDesc: {
     fontSize: '13px',

@@ -62,8 +62,9 @@
   /* Typography */
   --nav-height: 70px;
   --player-height: 90px;
-  --font-primary: 'Space Grotesk', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Syne', 'Inter', sans-serif;
+  --font-mono: 'Fira Code', 'JetBrains Mono', monospace;
 }
 
 * {
