@@ -1,0 +1,33 @@
+# Configuración de despliegue para Netlify
+# Eternal Beat Radio Chile
+
+[build]
+  # Comando que construye la app para producción
+  command = "npm run build"
+  # Carpeta que Netlify publica (la genera Vite al hacer build)
+  publish = "dist"
+
+[build.environment]
+  # Versión de Node usada para construir
+  NODE_VERSION = "20"
+
+# Regla SPA: cualquier ruta (/live, /chat, /import, etc.)
+# debe servir index.html para que React Router maneje la navegación.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Cabeceras de seguridad y caché
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# El service worker no debe cachearse para que las actualizaciones lleguen rápido
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
